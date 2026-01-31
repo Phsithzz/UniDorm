@@ -11,7 +11,14 @@ import { FaPhoneVolume } from "react-icons/fa6";
 const dormData = [
   {
     id: 1,
-    image:dorm1,
+    image:[
+        dorm1,
+        dorm2,
+        dorm3,
+        dorm4,
+        dorm5,
+    ],
+
     name: "ทรีโอ เรสซิเดนซ์ ศรีราชา",
     address: "ซ.ทรีโอ ถ.สุขุมวิท ทุ่งสุขลา ศรีราชา ชลบุรี",
     distance: "ห่างจาก มหาวิทยาลัยเกษตรศาสตร์ ศรีราชา 1.5 กิโลเมตร",
@@ -78,9 +85,15 @@ const DormDetail = () => {
             </div>
             
           </div>
-          <div className="flex mt-4">
+          <div className="flex flex-col space-y-4 mt-4">
 
           <img src={dorm1} alt={dorm.name} className="w-full h-100 object-cover" />
+          <div className="flex gap-4">
+              <img src={dorm1} alt={dorm.name} className="w-full h-50 object-cover" />
+                <img src={dorm2} alt={dorm.name} className="w-full h-50 object-cover" />
+                  <img src={dorm3} alt={dorm.name} className="w-full h-50 object-cover" />
+                    <img src={dorm4} alt={dorm.name} className="w-full h-50 object-cover" />
+          </div>
           </div>
         </div>
 

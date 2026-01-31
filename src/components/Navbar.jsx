@@ -17,7 +17,7 @@ const Navbar = () => {
 
             <div className="flex justify-around items-center bg-white p-2 rounded-xl w-48">
                 <FiUser size={40}/>
-                <button className='bg-[#1B4332] rounded-xl text-white font-semibold px-6 py-2'>Login</button>
+                <Link className='bg-[#1B4332] rounded-xl text-white font-semibold px-6 py-2'>Login</Link>
             </div>
 
         </div>

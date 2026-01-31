@@ -33,14 +33,14 @@ const dormData = [
 const DormSlide = () => {
   return (
     <>
-    <div className="flex flex-col space-y-4 ">
+    <div className="flex flex-col space-y-4 p-6">
    
     
             <div className="flex gap-6 items-center ">
     
                     {dormData.map((dorm)=>(
                         <>
-                         <Link to="/detail" className="w-120 h-90 flex flex-col space-y-2 p-4 bg-[#40916C] rounded-xl" key={dorm.id}>
+                         <Link to="/detail" className="w-140 h-90 flex flex-col space-y-2 p-4 bg-[#40916C] rounded-xl" key={dorm.id}>
                         <img src={dorm.image} alt={dorm.name} className="w-120 h-50 object-cover"/>
                     
                     <p className="text-md font-semibold text-white">{dorm.name}</p>

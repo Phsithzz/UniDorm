@@ -2,6 +2,7 @@ import dorm1 from "../assets/dorm1.jpg";
 import test4 from "../assets/test4.jpg";
 import map from "../assets/map.png";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const dormData = [
   {
     id: 1,
@@ -24,12 +25,12 @@ const RecommendDorm = () => {
   return (
     <>
       <div className="flex flex-col space-y-4">
-        <h1 className="text-3xl font-semibold">หอพักแนะนำรอบมใ</h1>
+        <h1 className="text-3xl font-semibold">หอพักแนะนำรอบม.</h1>
 
         <div className="flex flex-col gap-6 items-center ">
           {dormData.map((dorm) => (
             <>
-              <div
+              <Link to="/detail"
                 className="w-full flex justify-between  p-4 bg-[#40916C] rounded-xl"
                 key={dorm.id}
               >
@@ -76,7 +77,7 @@ const RecommendDorm = () => {
                     {dorm.status ? "ว่าง" : "FULL"}
                   </p>
                 </div>
-              </div>
+              </Link>
             </>
           ))}
         </div>

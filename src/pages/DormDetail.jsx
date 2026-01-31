@@ -6,10 +6,12 @@ import dorm5 from "../assets/dorm5.jpg"
 import map from "../assets/map.png"
 import Navbar from "../components/Navbar";
 import DormSlide from "../components/DormSlide";
+import { LuMousePointerClick } from "react-icons/lu";
 import { FaPhoneVolume } from "react-icons/fa6";
 const dormData = [
   {
     id: 1,
+    image:dorm1,
     name: "ทรีโอ เรสซิเดนซ์ ศรีราชา",
     address: "ซ.ทรีโอ ถ.สุขุมวิท ทุ่งสุขลา ศรีราชา ชลบุรี",
     distance: "ห่างจาก มหาวิทยาลัยเกษตรศาสตร์ ศรีราชา 1.5 กิโลเมตร",
@@ -55,10 +57,15 @@ const DormDetail = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold text-black">{dorm.name}</h1>
-              <p className="text-sm text-gray-800">
-                {dorm.address} <span className="bg-white px-2 py-0.5 rounded-full text-xs ml-2 cursor-pointer shadow-sm">ที่ตั้ง <img src={map} alt="map" className="w-20 h-20"/></span>
-              </p>
-              <p className="text-sm text-gray-700">{dorm.distance}</p>
+              <div className="flex gap-2 items-center">
+              <p>{dorm.address}</p>
+<a className="flex gap-4 justify-center items-center bg-white w-fit rounded-xl px-2 py-1">
+                    <p className="text-md font-semibold">ที่ตั้ง</p>
+                    <img src={map} alt="google map" className="w-10 h-10 object-cover"/>
+                </a>
+
+              </div>
+              <p className="text-sm ">{dorm.distance}</p>
             </div>
           </div>
 
@@ -69,6 +76,11 @@ const DormDetail = () => {
             <div className="bg-white rounded-full px-6 py-2 flex items-center font-bold shadow-sm w-fit">
               ค่าเช่า : <span className="ml-2 text-lg">{dorm.price} บาท/เดือน</span>
             </div>
+            
+          </div>
+          <div className="flex mt-4">
+
+          <img src={dorm1} alt={dorm.name} className="w-full h-100 object-cover" />
           </div>
         </div>
 
@@ -80,7 +92,7 @@ const DormDetail = () => {
           <h2 className="text-2xl font-bold mb-4">ประเภทห้อง</h2>
           <div className="overflow-x-auto rounded-lg shadow-sm">
             <table className="w-full text-left bg-[#E3EFE5]">
-              <thead className="bg-[#B8D8BE] text-gray-800">
+              <thead className="bg-[#B6CEB4] text-gray-800">
                 <tr>
                   <th className="p-3">ประเภท</th>
                   <th className="p-3">รูปแบบห้อง</th>
@@ -91,7 +103,7 @@ const DormDetail = () => {
                   <th className="p-3 text-center">สถานะ</th>
                 </tr>
               </thead>
-              <tbody className="bg-[#E8F1EA]">
+              <tbody className="bg-[#D9E9CF]">
                 {dorm.roomTypes.map((room, index) => (
                   <tr key={index} className="border-b border-green-100 last:border-0">
                     <td className="p-3 font-semibold">{room.type}</td>
@@ -111,7 +123,7 @@ const DormDetail = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <div className="bg-[#E3EFE5] p-6 rounded-xl">
+          <div className="bg-[#D9E9CF] p-6 rounded-xl">
             <h2 className="text-2xl font-bold mb-4">สิ่งอำนวยความสะดวก</h2>
             <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-gray-800">
               {dorm.facilities.map((item, index) => (
@@ -129,24 +141,24 @@ const DormDetail = () => {
           </div>
 
   
-          <div className="bg-[#E3EFE5] p-6 rounded-xl">
+          <div className="bg-[#D9E9CF] p-6 rounded-xl">
             <div className="flex justify-between items-center mb-4">
                <h2 className="text-2xl font-bold">รีวิวจากผู้เข้าพัก</h2>
-               <button className="bg-[#56986F] text-white text-xs px-3 py-1 rounded shadow-sm hover:bg-[#407a55]">
+               <button className="bg-[#40916C] text-white text-md px-4 py-2 rounded shadow-sm hover:bg-[#40916C]">
                  เขียนรีวิวของคุณ
                </button>
             </div>
             
             <div className="flex flex-col gap-3">
-               <div className="bg-[#56986F] text-white p-2 rounded-lg text-center font-bold w-12 self-start mb-2">
+               <div className="bg-[#40916C] text-white p-2 rounded-lg text-center font-bold w-12 self-start mb-2">
                  {dorm.reviews.score}
                </div>
                
                <p className="font-semibold mb-1">หัวข้อ</p>
                {dorm.reviews.topics.map((topic, index) => (
-                 <div key={index} className="bg-[#56986F] text-white px-4 py-2 rounded-lg flex justify-between items-center shadow-sm">
+                 <div key={index} className="bg-[#40916C] text-white px-4 py-2 rounded-lg flex justify-between items-center shadow-sm">
                    {topic}
-                   <span>✈️</span> {/* ใช้ icon สมมติเพื่อให้เหมือนรูป */}
+                   <span><LuMousePointerClick /></span> 
                  </div>
                ))}
             </div>

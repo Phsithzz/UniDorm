@@ -1,5 +1,6 @@
 import { FiUser } from "react-icons/fi";
 import logoDorm from "../assets/logoDorm.png"
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
@@ -7,7 +8,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
 
             <div className="flex items-center gap-2">
+                <Link to="/">
                 <img src={logoDorm} alt="logo UniDorm" className='w-20 h-20 '/>
+                </Link>
+                
                 <h1 className="text-3xl font-semibold text-white">UniDorm</h1>
             </div>
 
